@@ -23,7 +23,7 @@ namespace BlackJack
             Card newCard = new Card();
             result.Text = "Drawing Card!";
             card.Text = newCard.Value + " of " + newCard.Color;            
-
+            //TODO: Add multiple cards, sum feature, checker to see if player is bust.
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -34,6 +34,7 @@ namespace BlackJack
         private void stand_Click(object sender, EventArgs e)
         {
             result.Text += " Standing ";
+            //TODO: Add total checker to see if player is bust
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
