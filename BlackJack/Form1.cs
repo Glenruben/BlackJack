@@ -22,7 +22,8 @@ namespace BlackJack
         {
             Card newCard = new Card();
             result.Text = "Drawing Card!";
-            card.Text = newCard.Value + " of " + newCard.Color;            
+            card.Text = newCard.Value + " of " + newCard.Color + "\n" 
+                + "The value of this card is: " + newCard.ValuePoints ;            
             //TODO: Add multiple cards, sum feature, checker to see if player is bust.
         }
 
