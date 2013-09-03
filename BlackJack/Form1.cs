@@ -22,8 +22,8 @@ namespace BlackJack
         {
             Card newCard = new Card();
             result.Text = "Drawing Card!";
-            card.Text = newCard.Value + " of " + newCard.Color + "\n" 
-                + "The value of this card is: " + newCard.ValuePoints ;            
+            card.Text += newCard.Value + " of " + newCard.Color + ". The value of this card is: " + newCard.ValuePoints + "\n" ;      
+            
             //TODO: Add multiple cards, sum feature, checker to see if player is bust.
         }
 
@@ -38,9 +38,12 @@ namespace BlackJack
             //TODO: Add total checker to see if player is bust
         }
 
-        private void trackBar1_Scroll(object sender, EventArgs e)
+
+        private void result_Click(object sender, EventArgs e)
         {
 
         }
+
+
     }
 }
