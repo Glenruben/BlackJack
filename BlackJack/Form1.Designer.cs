@@ -69,11 +69,10 @@
             // card
             // 
             this.card.AutoSize = true;
-            this.card.Location = new System.Drawing.Point(26, 53);
+            this.card.Location = new System.Drawing.Point(48, 53);
             this.card.Name = "card";
-            this.card.Size = new System.Drawing.Size(29, 13);
+            this.card.Size = new System.Drawing.Size(0, 13);
             this.card.TabIndex = 3;
-            this.card.Text = "label";
             // 
             // pointCount
             // 
