@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//TODO: Check to see same card is not dealt twice. 
+//TODO: Graphics? Maybe. 
+//TODO: Add dealer? 
+//TOTO: Let Aces be either 1 or 11.  
+
 namespace BlackJack
 {
     public partial class BlackJackCat : Form
@@ -24,11 +29,11 @@ namespace BlackJack
             infoLabel.Text = "Drawing Card!";
             cardLabel.Text += newCard.Value + " of " + newCard.Color + ". The value of this card is: " + newCard.ValuePoints + "\n" ; 
 
-            int _p = int.Parse(pointCount.Text) + newCard.ValuePoints;
+            int _p = int.Parse(pointCount.Text) + newCard.ValuePoints; //sum current point score + value of new card
                         
-            pointCount.Text = _p.ToString();
+            pointCount.Text = _p.ToString(); //update point Label text. 
 
-            if (_p == 21)
+            if (_p == 21) 
             { 
             bustLabel.Text = "BLACKJACXX whoa that's awesome";
             deal.Enabled = false;
@@ -40,10 +45,6 @@ namespace BlackJack
             bustLabel.Text = "YOU'RE BUST BUDDY!";
             }
       
-
-
-            
-            //TODO: Add multiple cards, sum feature, checker to see if player is bust.
         }
 
         private void Form1_Load(object sender, EventArgs e)
