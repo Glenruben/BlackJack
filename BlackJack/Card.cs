@@ -18,6 +18,8 @@ namespace BlackJack
 
         private string ColorName;
 
+        
+
         private string nameColor()
         {
             try

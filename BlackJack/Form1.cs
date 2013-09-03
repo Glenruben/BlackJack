@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BlackJack
 {
-    public partial class Form1 : Form
+    public partial class BlackJackCat : Form
     {
-        public Form1()
+        public BlackJackCat()
         {
             
             InitializeComponent();
@@ -21,17 +21,26 @@ namespace BlackJack
         private void button1_Click(object sender, EventArgs e)
         {
             Card newCard = new Card();
-            result.Text = "Drawing Card!";
-            card.Text += newCard.Value + " of " + newCard.Color + ". The value of this card is: " + newCard.ValuePoints + "\n" ; 
+            infoLabel.Text = "Drawing Card!";
+            cardLabel.Text += newCard.Value + " of " + newCard.Color + ". The value of this card is: " + newCard.ValuePoints + "\n" ; 
 
             int _p = int.Parse(pointCount.Text) + newCard.ValuePoints;
                         
             pointCount.Text = _p.ToString();
-                
-                //Int.Parse(pointCount.Text) + newCard.ValuePoints
-                
-                //newCard.ValuePoints.ToString()
-     
+
+            if (_p == 21)
+            { 
+            bustLabel.Text = "BLACKJACXX whoa that's awesome";
+            deal.Enabled = false;
+            }
+
+            if (_p > 21)
+            {
+            deal.Enabled = false;
+            bustLabel.Text = "YOU'RE BUST BUDDY!";
+            }
+      
+
 
             
             //TODO: Add multiple cards, sum feature, checker to see if player is bust.
@@ -42,16 +51,21 @@ namespace BlackJack
 
         }
 
-        private void stand_Click(object sender, EventArgs e)
-        {
-            result.Text += " Standing ";
-            //TODO: Add total checker to see if player is bust
-        }
+
 
 
         private void result_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            cardLabel.Text = "";
+            pointCount.Text = "0";
+            bustLabel.Text = "";
+            deal.Enabled = true;
+            infoLabel.Text = "Press DEAL for new card";
         }
 
 
